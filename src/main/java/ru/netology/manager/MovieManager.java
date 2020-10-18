@@ -3,6 +3,9 @@ package ru.netology.manager;
 import ru.netology.domain.Movie;
 
 public class MovieManager {
+    private Movie[] items = new Movie[0];
+    int afishaLength = 10;
+
 
         public void add(Movie item) {
         int length = items.length + 1;
@@ -17,10 +20,10 @@ public class MovieManager {
         items = tmp;
 
     }
-    private Movie[] items = new Movie[6];
+
     public MovieManager[] getAll() {
         MovieManager[] result = new MovieManager[items.length];
-        for (int i = 0; i < result.length; i++) {
+        for (int i = 0; i < items.length; i++) {
             int index = items.length - i - 1;
             result[i] = items[index];
         }
