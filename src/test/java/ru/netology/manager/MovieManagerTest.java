@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 public class MovieManagerTest {
 
     @Test
-    MovieManager.add("8","8","Довод","боевик");
+    public MovieManagerTest() {
+        MovieManager.add("8", "8", "Довод", "боевик");
 
+    }
 }
