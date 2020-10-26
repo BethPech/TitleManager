@@ -35,10 +35,11 @@ public class MovieManager {
     }
 
     public Movie[] getAllLastItems() {
-        Movie[] result = new Movie[];
-        for (int i = 0; i < Math.min(afishaLength, items.length); i++) {
-            int index = Math.min(afishaLength, items.length) - i - 1;
+        Movie[] result = new Movie[Math.min(afishaLength, items.length)];
+        for (int i = 0; i < result.length; i++) {
+            int index = items.length - i - 1;
             result[i] = items[index];
+
         }
         return result;
     }
