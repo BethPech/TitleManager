@@ -10,9 +10,6 @@ public class AfishaManager {
         this.repository = repository;
     }
 
-    public AfishaManager() {
-
-    }
 
     public void add(Movie item) {
         repository.save(item);
@@ -33,7 +30,7 @@ public class AfishaManager {
     }
 
     public Movie[] removeAll(Movie[] id){
-        repository.removeAll(id);
+        repository.removeAll();
         return id;
     }
 

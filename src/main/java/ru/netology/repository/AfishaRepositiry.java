@@ -16,7 +16,10 @@ public class AfishaRepositiry {
 
     public Movie[] findAll() {
         return items;
-    }
+            }
+
+
+
 
     public Movie[] findById(int id) {
         for (Movie item : items) {
@@ -41,6 +44,7 @@ public class AfishaRepositiry {
         items = tmp;
     }
 
-    public void removeAll(Movie[]items) {
+    public Movie[] removeAll() {
+        return items;
     }
 }
