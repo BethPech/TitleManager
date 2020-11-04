@@ -9,8 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.mockito.Mockito.doReturn;
 
 public class AfishaRepositoryTest {
-    MovieManager manager = new MovieManager();
-
+    Movie[] items1 = new Movie[]{};
     Movie item1 = new Movie(1, "1", "Бладшот", "Боевик");
     Movie item2 = new Movie(2, "2", "Вперёд", "мультфильм");
     Movie item3 = new Movie(3, "3", "Отель Белград", "комедия");
@@ -22,26 +21,21 @@ public class AfishaRepositoryTest {
     Movie item9 = new Movie(9, "9", "Номер один", "комедия");
 
 
-    @BeforeEach
-    void setup() {
-        manager.add(item1);
-        manager.add(item2);
-        manager.add(item3);
-        manager.add(item4);
-        manager.add(item5);
-        manager.add(item6);
-        manager.add(item7);
-        manager.add(item8);
-        manager.add(item9);
-    }
-
     @Test
     void shouldSave() {
         AfishaRepositiry afishaRepository = new AfishaRepositiry();
         afishaRepository.save(item1);
         afishaRepository.save(item2);
         afishaRepository.save(item3);
-
+        afishaRepository.save(item4);
+        afishaRepository.save(item5);
+        afishaRepository.save(item6);
+        afishaRepository.save(item7);
+        afishaRepository.save(item8);
+        afishaRepository.save(item9);
+        Movie[] actual = afishaRepository.findAll();
+        Movie[] expected = new Movie[]{item1,item2, item3, item4, item5, item6, item7, item8,item9};
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -53,19 +47,12 @@ public class AfishaRepositoryTest {
     }
 
     @Test
-    void shouldFindById() {
+     void shouldFindById() {
         AfishaRepositiry afishaRepository = new AfishaRepositiry();
         afishaRepository.findById(1);
-        afishaRepository.findById(2);
-        afishaRepository.findById(3);
-        afishaRepository.findById(4);
-        afishaRepository.findById(5);
-        afishaRepository.findById(6);
-        afishaRepository.findById(7);
-        afishaRepository.findById(8);
-        afishaRepository.findById(9);
-
-
+        Movie[] actual = afishaRepository.findById(1);
+        Movie[] expected = new Movie[]{item1};
+        assertArrayEquals(expected, actual);
 
     }
 
@@ -79,12 +66,10 @@ public class AfishaRepositoryTest {
     @Test
     void shouldRemoveById() {
         AfishaRepositiry afishaRepository = new AfishaRepositiry();
-        afishaRepository.save(item1);
-        afishaRepository.save(item2);
-        afishaRepository.save(item3);
-        afishaRepository.removeById(1);
-        afishaRepository.removeById(2);
-        afishaRepository.removeById(3);
+        Movie[] actual = afishaRepository.removeById(1);
+        Movie[] expected = new Movie[]{item2, item3, item4, item5, item6, item7, item8,item9};
+        assertArrayEquals(expected, actual);
+
 
     }
 

@@ -1,0 +1,4 @@
+ru\netology\domain\Movie.class
+ru\netology\manager\MovieManager.class
+ru\netology\manager\AfishaManager.class
+ru\netology\repository\AfishaRepositiry.class

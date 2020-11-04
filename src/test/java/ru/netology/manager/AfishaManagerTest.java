@@ -44,17 +44,17 @@ public class AfishaManagerTest {
 
 
     @Test
-    public void shouldFindById() {
+    public int shouldFindById() {
         int idToFind = 3;
         Movie[] returned = new Movie[]{item3};
         doReturn(returned).when(repository).findAll();
-
 
         manager.findById(idToFind);
         Movie[] expected = new Movie[]{item3};
         Movie[] actual = manager.getAll();
         assertArrayEquals(expected, actual);
 
+        return idToFind;
     }
 
     @Test

@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: ru.netology.manager.AfishaManagerTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.917 s <<< FAILURE! - in ru.netology.manager.AfishaManagerTest
+shouldNotFindByIdIfNotExists  Time elapsed: 0.042 s  <<< ERROR!
+org.mockito.exceptions.base.MockitoException: 
+
+Only void methods can doNothing()!
+Example of correct use of doNothing():
+    doNothing().
+    doThrow(new RuntimeException())
+    .when(mock).someVoidMethod();
+Above means:
+someVoidMethod() does nothing the 1st time but throws an exception the 2nd time is called
+	at ru.netology.manager.AfishaManagerTest.shouldNotFindByIdIfNotExists(AfishaManagerTest.java:65)
+
