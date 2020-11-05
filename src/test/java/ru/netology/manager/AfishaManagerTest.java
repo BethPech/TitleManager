@@ -10,6 +10,7 @@ import ru.netology.domain.Movie;
 import ru.netology.repository.AfishaRepositiry;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -73,14 +74,13 @@ public class AfishaManagerTest {
     @Test
     public void shouldRemoveIfExists() {
         int idToRemove = 1;
-
         Movie[] returned = new Movie[]{item2, item3};
-        doReturn(returned).when(repository).findAll();
-        doNothing().when(repository).removeById(idToRemove);
+        doReturn(returned).when(repository).removeById(idToRemove);
+
 
         manager.removeById(idToRemove);
-        Movie[] expected = new Movie[]{item3, item2};
-        Movie[] actual = manager.getAll();
+        Movie[] expected = new Movie[]{item2,item3};
+        Movie[] actual = manager.removeById(idToRemove);
         assertArrayEquals(expected, actual);
 
     }
@@ -90,11 +90,10 @@ public class AfishaManagerTest {
         int idToRemove = 4;
         Movie[] returned = new Movie[]{item1, item2, item3};
         doReturn(returned).when(repository).findAll();
-        doNothing().when(repository).removeById(idToRemove);
 
         manager.removeById(idToRemove);
-        Movie[] expected = new Movie[]{item3, item2, item1};
-        Movie[] actual = manager.getAll();
+        Movie[] expected = new Movie[]{item1, item2,item3 };
+        Movie[] actual = manager.removeById(idToRemove);
 
         assertArrayEquals(expected, actual);
 
@@ -107,6 +106,19 @@ public class AfishaManagerTest {
         Movie[] actual = manager.removeAll(returned);
 
         assertArrayEquals(expected, actual);
+
+    }
+    @Test
+    public void shouldFindByID(){
+        int idToFind = 2;
+        Movie returned = item2;
+        doReturn(returned).when(repository).findById(idToFind);
+
+        manager.removeById(idToFind);
+        Movie expected = item2;
+        Movie actual = manager.findById(2);
+
+        assertEquals(expected, actual);
 
     }
 }

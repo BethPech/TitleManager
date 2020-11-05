@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ru.netology.repository.AfishaRepositoryTest" time="0.029" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ru.netology.repository.AfishaRepositoryTest" time="0.001" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Program Files\AdoptOpenJDK\jdk-11.0.7.10-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire13150278938923936847\surefirebooter1423329732566545007.jar C:\Users\User\AppData\Local\Temp\surefire13150278938923936847 2020-11-02T22-57-19_466-jvmRun1 surefire16083820957598396770tmp surefire_09365565890986260141tmp"/>
+    <property name="sun.java.command" value="C:\Users\User\AppData\Local\Temp\surefire308232427883129711\surefirebooter3711918002831002947.jar C:\Users\User\AppData\Local\Temp\surefire308232427883129711 2020-11-05T21-21-00_313-jvmRun1 surefire4081195884256366348tmp surefire_017981126415861170624tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\User\Desktop\Testing\Java\HW\TitleManager\target\test-classes;C:\Users\User\Desktop\Testing\Java\HW\TitleManager\target\classes;C:\Users\User\.m2\repository\org\projectlombok\lombok\1.18.12\lombok-1.18.12.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter\5.7.0\junit-jupiter-5.7.0.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.7.0\junit-jupiter-api-5.7.0.jar;C:\Users\User\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\User\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-commons\1.7.0\junit-platform-commons-1.7.0.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.7.0\junit-jupiter-params-5.7.0.jar;C:\Users\User\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.7.0\junit-jupiter-engine-5.7.0.jar;C:\Users\User\.m2\repository\org\junit\platform\junit-platform-engine\1.7.0\junit-platform-engine-1.7.0.jar;C:\Users\User\.m2\repository\org\mockito\mockito-junit-jupiter\3.3.3\mockito-junit-jupiter-3.3.3.jar;C:\Users\User\.m2\repository\org\mockito\mockito-core\3.3.3\mockito-core-3.3.3.jar;C:\Users\User\.m2\repository\net\bytebuddy\byte-buddy\1.10.5\byte-buddy-1.10.5.jar;C:\Users\User\.m2\repository\net\bytebuddy\byte-buddy-agent\1.10.5\byte-buddy-agent-1.10.5.jar;C:\Users\User\.m2\repository\org\objenesis\objenesis\2.6\objenesis-2.6.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -34,7 +34,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="idea.version2020.1.2" value="true"/>
-    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire13150278938923936847\surefirebooter1423329732566545007.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\User\AppData\Local\Temp\surefire308232427883129711\surefirebooter3711918002831002947.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.7+10"/>
@@ -61,10 +61,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="shouldFindById" classname="ru.netology.repository.AfishaRepositoryTest" time="0.003"/>
-  <testcase name="shouldFindAll" classname="ru.netology.repository.AfishaRepositoryTest" time="0.004"/>
-  <testcase name="shouldRemoveById" classname="ru.netology.repository.AfishaRepositoryTest" time="0.003"/>
-  <testcase name="shouldSave" classname="ru.netology.repository.AfishaRepositoryTest" time="0.001"/>
-  <testcase name="shouldRemoveAll" classname="ru.netology.repository.AfishaRepositoryTest" time="0.002"/>
-  <testcase name="shouldNotFindByIdShouldReturnNull" classname="ru.netology.repository.AfishaRepositoryTest" time="0.002"/>
+  <testcase name="shouldFindById" classname="ru.netology.repository.AfishaRepositoryTest" time="0"/>
+  <testcase name="shouldFindAll" classname="ru.netology.repository.AfishaRepositoryTest" time="0"/>
+  <testcase name="shouldRemoveById" classname="ru.netology.repository.AfishaRepositoryTest" time="0"/>
+  <testcase name="shouldSave" classname="ru.netology.repository.AfishaRepositoryTest" time="0"/>
+  <testcase name="shouldRemoveAll" classname="ru.netology.repository.AfishaRepositoryTest" time="0"/>
+  <testcase name="shouldNotFindByIdShouldReturnNull" classname="ru.netology.repository.AfishaRepositoryTest" time="0.001"/>
 </testsuite>
