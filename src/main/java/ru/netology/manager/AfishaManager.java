@@ -25,14 +25,12 @@ public class AfishaManager {
         return result;
     }
 
-    public Movie[] removeById(int id) {
-        Movie[] result = repository.removeById(id);
-        return result;
+    public void removeById(int id) {
+        repository.removeById(id);
     }
 
-    public Movie[] removeAll(Movie[] id) {
+    public void removeAll(Movie[] id) {
         repository.removeAll();
-        return id;
     }
 
     public void findAll() {

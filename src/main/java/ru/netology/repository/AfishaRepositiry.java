@@ -29,7 +29,7 @@ public class AfishaRepositiry {
         return null;
     }
 
-    public Movie[] removeById(int id) {
+    public void removeById(int id) {
         int length = items.length - 1;
         Movie[] tmp = new Movie[length];
         int index = 0;
@@ -40,11 +40,9 @@ public class AfishaRepositiry {
             }
         }
         items = tmp;
-        return tmp;
     }
 
-    public Movie[] removeAll() {
-        Movie[] items = new Movie[0];
-        return items;
+    public void removeAll() {
+        items = new Movie[0];
     }
 }
