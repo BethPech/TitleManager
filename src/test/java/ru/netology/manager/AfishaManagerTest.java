@@ -91,12 +91,18 @@ public class AfishaManagerTest {
 
     @Test
     public void shouldRemoveAll() {
-        repository.removeAll();
-        doReturn().when(repository).findAll();
-        Movie[] expected = new Movie[0];
-        Movie[] actual = manager.getAll();
-
-        assertArrayEquals(expected, actual);
+        doNothing().when(manager).findAll();
+        manager.removeAll();
+        assertArrayEquals(0, manager.removeAll());
+//        @Test
+//        public void whenAddCalledValueCaptured() {
+//            MyList myList = mock(MyList.class);
+//            ArgumentCaptor<String> valueCapture = ArgumentCaptor.forClass(String.class);
+//            doNothing().when(myList).add(any(Integer.class), valueCapture.capture());
+//            myList.add(0, "captured");
+//
+//            assertEquals("captured", valueCapture.getValue());
+//        }
 
     }
     @Test

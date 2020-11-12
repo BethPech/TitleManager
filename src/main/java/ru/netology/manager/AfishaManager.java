@@ -29,7 +29,7 @@ public class AfishaManager {
         repository.removeById(id);
     }
 
-    public void removeAll(Movie[] id) {
+    public void removeAll() {
         repository.removeAll();
     }
 
