@@ -46,11 +46,10 @@ public class AfishaManagerTest {
     public void shouldFindById() {
         int idToFind = 3;
         Movie[] returned = new Movie[]{item3};
-        doReturn(returned).when(repository).findAll();
-
-        manager.findById(idToFind);
+        doReturn(returned).when(repository).findById(idToFind);
+        manager.findById(3);
         Movie[] expected = new Movie[]{item3};
-        Movie[] actual = manager.getAll();
+        Movie[] actual = manager.findById(3);
         assertArrayEquals(expected, actual);
 
     }
@@ -58,64 +57,39 @@ public class AfishaManagerTest {
     @Test
     public void shouldNotFindByIdIfNotExists() {
         int idToFind = 6;
-        doNothing().when(repository).findById(idToFind);
+        doNothing().when(repository).findAll();
 
-        manager.findById(idToFind);
-        Movie[] expected = new Movie[]{item3, item2, item1};
-        Movie[] actual = manager.getAll();
-        assertArrayEquals(expected, actual);
+
     }
 
     @Test
     public void shouldRemoveIfExists() {
         int idToRemove = 1;
         doNothing().when(repository).removeById(idToRemove);
-
-        Movie[] expected = new Movie[]{item2,item3};
-        Movie[] actual = manager.getAll();
+        manager.removeById(idToRemove);
+        Movie[] expected = new Movie[]{item2, item3};
+        Movie[] actual = manager.findAll();
         assertArrayEquals(expected, actual);
+
+
 
     }
 
     @Test
     public void shouldNotRemoveIfNotExists() {
         int idToRemove = 4;
-        Movie[] returned = new Movie[]{item1, item2, item3};
         doNothing().when(repository).removeById(idToRemove);
         manager.removeById(idToRemove);
-        Movie[] expected = new Movie[]{item1, item2,item3 };
-        Movie[] actual = manager.getAll();
-
-        assertArrayEquals(expected, actual);
     }
 
     @Test
     public void shouldRemoveAll() {
-        doNothing().when(manager).findAll();
+        doNothing().when(repository).removeAll();
         manager.removeAll();
-        assertArrayEquals(0, manager.removeAll());
-//        @Test
-//        public void whenAddCalledValueCaptured() {
-//            MyList myList = mock(MyList.class);
-//            ArgumentCaptor<String> valueCapture = ArgumentCaptor.forClass(String.class);
-//            doNothing().when(myList).add(any(Integer.class), valueCapture.capture());
-//            myList.add(0, "captured");
-//
-//            assertEquals("captured", valueCapture.getValue());
-//        }
-
+        Movie[] expected = new Movie[0];
+        Movie[] actual = manager.findAll();
+        assertArrayEquals(expected, actual);
     }
-    @Test
-    public void shouldFindByID(){
-        int idToFind = 2;
-        Movie returned = item2;
-        doReturn(returned).when(repository).findById(idToFind);
 
-        manager.removeById(idToFind);
-        Movie expected = item2;
-        Movie actual = manager.findById(2);
 
-        assertEquals(expected, actual);
-
-    }
 }

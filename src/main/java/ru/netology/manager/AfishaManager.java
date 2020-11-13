@@ -33,13 +33,14 @@ public class AfishaManager {
         repository.removeAll();
     }
 
-    public void findAll() {
+    public Movie[] findAll() {
         repository.findAll();
+        return new Movie[0];
     }
 
-    public Movie findById(int id) {
-        Movie result = repository.findById(id);
-        return result;
+    public Movie[] findById(int id) {
+        repository.findById(id);
+        return new Movie[0];
     }
 
 }
