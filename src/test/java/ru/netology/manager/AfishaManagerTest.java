@@ -67,7 +67,6 @@ public class AfishaManagerTest {
         Movie expected = item3;
         Movie actual = repository.findById(3);
         assertEquals(expected, actual);
-
     }
 
     @Test
@@ -79,9 +78,6 @@ public class AfishaManagerTest {
         Movie[] expected = new Movie[]{item10,item9,item8,item7,item6,item5,item4,item3,item2,item1};
         Movie[] actual = manager.getAll();
         assertArrayEquals(expected, actual);
-
-
-
     }
 
     @Test
@@ -95,9 +91,6 @@ public class AfishaManagerTest {
         Movie[] actual = manager.getAll();
         assertArrayEquals(expected, actual);
         verify(repository).removeById(idToRemove);
-
-
-
     }
 
     @Test
@@ -111,7 +104,6 @@ public class AfishaManagerTest {
         Movie[] actual = manager.getAll();
         assertArrayEquals(expected, actual);
         verify(repository).removeById(idToRemove);
-
     }
 
     @Test
@@ -122,6 +114,21 @@ public class AfishaManagerTest {
         Movie[] actual = manager.findAll();
         assertArrayEquals(expected, actual);
     }
-
+    @Test
+    public void shouldAddMoreThenLength() {
+        Movie[] returned = new Movie[]{item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11};
+        doReturn(returned).when(repository).findAll();
+        Movie[] expected = new Movie[]{item11, item10, item9, item8, item7, item6, item5, item4, item3, item2};
+        Movie[] actual = manager.getAll();
+        assertArrayEquals(expected, actual);
+    }
+    @Test
+    public void shouldAddLessThenLength() {
+        Movie[] returned = new Movie[]{item1, item2, item3, item4, item5, item6, item7, item8, item9};
+        doReturn(returned).when(repository).findAll();
+        Movie[] expected = new Movie[]{item9, item8, item7, item6, item5, item4, item3, item2, item1};
+        Movie[] actual = manager.getAll();
+        assertArrayEquals(expected, actual);
+    }
 
 }

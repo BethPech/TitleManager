@@ -5,7 +5,6 @@ import ru.netology.domain.Movie;
 public class AfishaRepositiry {
     private Movie[] items = new Movie[0];
 
-
     public void save(Movie item) {
         int length = items.length + 1;
         Movie[] tmp = new Movie[length];

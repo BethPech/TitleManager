@@ -4,8 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Movie;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.doReturn;
 
 public class AfishaRepositoryTest {
@@ -52,28 +51,28 @@ public class AfishaRepositoryTest {
         Movie actual = afishaRepository.findById(1);
         Movie expected = item1;
         assertEquals(expected, actual);
-
     }
 
     @Test
     void shouldNotFindByIdShouldReturnNull() {
         Movie actual = afishaRepository.findById(11);
-        assertEquals(null, actual);
-
+        assertNull(actual);
     }
 
     @Test
     void shouldRemoveById() {
         afishaRepository.removeById(1);
-
-
-
+        Movie[] expected = new Movie[]{item2, item3, item4, item5, item6, item7, item8, item9};
+        Movie[] actual = afishaRepository.findAll();
+        assertArrayEquals(expected, actual);
     }
 
     @Test
     void shouldRemoveAll(){
         afishaRepository.removeAll();
-
+        Movie[] expected = new Movie[]{};
+        Movie[] actual = afishaRepository.findAll();
+        assertArrayEquals(expected, actual);
 
 
     }

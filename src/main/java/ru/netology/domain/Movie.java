@@ -12,6 +12,5 @@ public class Movie {
     private String imageUrl;
     private String name;
     private String genre;
-
     }
 

@@ -5,45 +5,44 @@ import ru.netology.domain.Movie;
 <span class="fc" id="L5">public class AfishaRepositiry {</span>
 <span class="fc" id="L6">    private Movie[] items = new Movie[0];</span>
 
-
     public void save(Movie item) {
-<span class="fc" id="L10">        int length = items.length + 1;</span>
-<span class="fc" id="L11">        Movie[] tmp = new Movie[length];</span>
-<span class="fc" id="L12">        System.arraycopy(items, 0, tmp, 0, items.length);</span>
-<span class="fc" id="L13">        int lastIndex = tmp.length - 1;</span>
-<span class="fc" id="L14">        tmp[lastIndex] = item;</span>
-<span class="fc" id="L15">        items = tmp;</span>
-<span class="fc" id="L16">    }</span>
+<span class="fc" id="L9">        int length = items.length + 1;</span>
+<span class="fc" id="L10">        Movie[] tmp = new Movie[length];</span>
+<span class="fc" id="L11">        System.arraycopy(items, 0, tmp, 0, items.length);</span>
+<span class="fc" id="L12">        int lastIndex = tmp.length - 1;</span>
+<span class="fc" id="L13">        tmp[lastIndex] = item;</span>
+<span class="fc" id="L14">        items = tmp;</span>
+<span class="fc" id="L15">    }</span>
 
     public Movie[] findAll() {
-<span class="fc" id="L19">        return items;</span>
+<span class="fc" id="L18">        return items;</span>
     }
 
 
     public Movie findById(int id) {
-<span class="fc bfc" id="L24" title="All 2 branches covered.">        for (Movie item : items) {</span>
-<span class="fc bfc" id="L25" title="All 2 branches covered.">            if (item.getId() == id) {</span>
-<span class="fc" id="L26">                return item;</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        for (Movie item : items) {</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">            if (item.getId() == id) {</span>
+<span class="fc" id="L25">                return item;</span>
             }
         }
-<span class="fc" id="L29">        return null;</span>
+<span class="fc" id="L28">        return null;</span>
     }
 
     public void removeById(int id) {
-<span class="fc" id="L33">        int length = items.length - 1;</span>
-<span class="fc" id="L34">        Movie[] tmp = new Movie[length];</span>
-<span class="fc" id="L35">        int index = 0;</span>
-<span class="fc bfc" id="L36" title="All 2 branches covered.">        for (Movie item : items) {</span>
-<span class="fc bfc" id="L37" title="All 2 branches covered.">            if (item.getId() != id) {</span>
-<span class="fc" id="L38">                tmp[index] = item;</span>
-<span class="fc" id="L39">                index++;</span>
+<span class="fc" id="L32">        int length = items.length - 1;</span>
+<span class="fc" id="L33">        Movie[] tmp = new Movie[length];</span>
+<span class="fc" id="L34">        int index = 0;</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        for (Movie item : items) {</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">            if (item.getId() != id) {</span>
+<span class="fc" id="L37">                tmp[index] = item;</span>
+<span class="fc" id="L38">                index++;</span>
             }
         }
-<span class="fc" id="L42">        items = tmp;</span>
-<span class="fc" id="L43">    }</span>
+<span class="fc" id="L41">        items = tmp;</span>
+<span class="fc" id="L42">    }</span>
 
     public void removeAll() {
-<span class="fc" id="L46">        items = new Movie[0];</span>
-<span class="fc" id="L47">    }</span>
+<span class="fc" id="L45">        items = new Movie[0];</span>
+<span class="fc" id="L46">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
